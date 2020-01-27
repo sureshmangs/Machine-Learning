@@ -1,4 +1,4 @@
-# :rocket: Machine-Learning
+# :rocket: Machine Learning
 
 :pencil2: Implementing Machine Learning Algorithms
 
@@ -36,11 +36,25 @@ The `Pandas` module is used for working with tabular data
 #### Usage
 `import pandas as pd`
 
-## :books: Python Tutorial
+## :books: Taking care of missing values
+
+SimpleImputer class provides basic strategies for imputing missing values.
+
+
+```
+import numpy as np
+from sklearn.impute import SimpleImputer 
+imputer = SimpleImputer(missing_values=np.nan,strategy='mean')
+imputer = imputer.fit(X[:, :])
+X[:, :] = imputer.transform(X[:, :])
+```
+
+## :books: Python Quickstart
 
 ### :arrow_right: iloc
 
-The iloc indexer for Pandas Dataframe is used for integer-location based indexing / selection by position.
+iloc indexer for Pandas Dataframe is used for integer-location based indexing / selection by position.
+
 
 ```
 # Single selections using iloc and DataFrame
