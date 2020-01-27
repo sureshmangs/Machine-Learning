@@ -91,6 +91,36 @@ from sklearn.model_selection import train_test_split
 X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.2, random_state = 0)
 ```
 
+
+## :books: Feature scaling
+
+Feature Scaling is a technique used at the time of Data Pre Processing to normalise the independent variables or features of data in a particular range.
+
+Standardisation:
+
+```
+x_stand = ( x - mean(x) ) / ( standard devation(x) )
+```
+
+Normalisation:
+
+```
+x_norm = ( x - min(x) ) / ( max(x) - min(x) )
+```
+
+StandardScaler normalises data features in such a way that it has mean as 0 and standard deviation as 1.
+
+```
+from sklearn.preprocessing import StandardScaler
+sc_X = StandardScaler()
+X_train = sc_X.fit_transform(X_train)
+X_test = sc_X.transform(X_test)
+```
+
+
+
+
+
 ## :books: Python Quickstart
 
 ### :arrow_right: iloc
