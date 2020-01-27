@@ -49,6 +49,48 @@ imputer = imputer.fit(X[:, :])
 X[:, :] = imputer.transform(X[:, :])
 ```
 
+## :books: Encoding categorical data
+
+LabelEncoder is a way to encode class levels.
+
+Encode target labels with value between 0 and n_classes-1.
+
+It is used to convert categorical data, or text data, into numbers,
+
+```
+from sklearn.preprocessing import LabelEncoder
+labelencoder_X = LabelEncoder()
+X[:, 0] = labelencoder_X.fit_transform(X[:, 0])     # first column
+```
+
+After implementing the label encoding, our model might think that a column has data with some kind of order or hierarchy, even when we don't have it. To overcome this ‘OneHotEncode’ is used.
+
+OneHotEncode represents the categorical variables as binary vectors.
+
+```
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.compose import ColumnTransformer
+
+ct = ColumnTransformer(
+    [('one_hot_encoder', OneHotEncoder(), [0])],     # first column
+    remainder='passthrough'                     
+)
+
+X = np.array(ct.fit_transform(X), dtype=np.float)
+```
+
+
+## :books: Splitting dataset into training set and testing set
+
+Used for splitting the dataset into the training set and the testing set.
+
+ train_test_split divide the datasets into two parts for testing and training .
+
+```
+from sklearn.model_selection import train_test_split
+X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.2, random_state = 0)
+```
+
 ## :books: Python Quickstart
 
 ### :arrow_right: iloc
