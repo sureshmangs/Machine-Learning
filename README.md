@@ -117,7 +117,21 @@ X_train = sc_X.fit_transform(X_train)
 X_test = sc_X.transform(X_test)
 ```
 
+## :books: Visualizing results
 
+A scatter plot of y vs x 
+
+Plot y versus x as lines or markers
+
+```
+plt.scatter(X, Y, color = 'red', label = 'Scatter Plot')
+plt.plot(X, Y, color = 'blue', label = 'Line Plot')
+plt.title('Title of the Plot')
+plt.xlabel('Xlabel plot')
+plt.ylabel('Ylabel plot')
+plt.legend()
+plt.show()
+```
 
 
 
