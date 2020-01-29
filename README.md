@@ -79,6 +79,20 @@ ct = ColumnTransformer(
 X = np.array(ct.fit_transform(X), dtype=np.float)
 ```
 
+Or you can use the OneHotEncoder directly
+```
+from sklearn.preprocessing import OneHotEncoder
+transformer = ColumnTransformer(
+    transformers=[
+        ("OneHotEncoder",        # Just a name
+         OneHotEncoder(), # The transformer class
+         [3]              # The column(s) to be applied on.
+         )
+    ],
+    remainder='passthrough' # donot apply anything to the remaining columns
+)
+X = transformer.fit_transform(X.tolist())
+```
 
 ## :books: Splitting dataset into training set and testing set
 
