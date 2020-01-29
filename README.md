@@ -149,6 +149,26 @@ plt.show()
 
 
 
+
+## :books: Building a Model
+
+### :arrow_right: Backward Elimination
+
+:one: Select a significance level to stay in the model (ie: SL = 0.05)
+
+:two: Fit the full model with all possible predictors
+
+:three: Consider the predictor with the highest P-value. If P > SL, go to step 4 otherwise go to FINISH
+
+:four:. Remove the predictor
+
+:five: Fit model without the predictor
+
+
+
+
+
+
 ## :books: Python Quickstart
 
 ### :arrow_right: iloc
